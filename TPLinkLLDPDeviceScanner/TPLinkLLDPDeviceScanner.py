@@ -152,6 +152,7 @@ def returnedLLDPNeighborAnalyzer(returnedLLDPData):
     occ_arr = [m.start() for m in re.finditer(DEVICENAME, str(LLDPData))]
     ###!! Appending MAC Address array with every MAC of specified device found
     for occ_index in occ_arr:
+        print(occ_index)
         MAC_ARR.append(found_arr.append(LLDPData[occ_index:occ_index+17]))
     # # # # # # # # # # # # # # # # # # ^^^ Needs to be changed to correctly reflext the MAC location
     # # # H510 34:8F:27:16:4F:A0 | MAC is 17 chars long
