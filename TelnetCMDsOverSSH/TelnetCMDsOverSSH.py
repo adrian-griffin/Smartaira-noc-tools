@@ -87,8 +87,10 @@ for command in command_lines:
             ''')
 time.sleep(15)
 
+
 ###!! Closing STDIN - Post destination command execution
 stdin.write("exit\n")
+f.close()
 stdin.close()
 
 

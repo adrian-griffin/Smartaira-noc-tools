@@ -1,4 +1,4 @@
-
+\n
 enable
 
 show lldp neighbor-information interface
