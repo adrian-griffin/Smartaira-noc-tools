@@ -81,15 +81,15 @@ time.sleep(4)
 f = open(CWD+'tplinkcommands.txt','r')
 command_lines = f.readlines()
 ###!! Passing desired commands into Telnet terminal from STDIN
-for command in command_lines:
-    stdin.write(str(command)+'''
+for command_l in command_lines:
+    stdin.write(str(command_l)+'''
+'''+""+'''
 
-            ''')
+        ''')
 time.sleep(15)
 
 
 ###!! Closing STDIN - Post destination command execution
-stdin.write("exit\n")
 f.close()
 stdin.close()
 
