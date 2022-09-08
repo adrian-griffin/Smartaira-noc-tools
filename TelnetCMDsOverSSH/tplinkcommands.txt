@@ -1,0 +1,5 @@
+ls
+who
+ip a
+curl ifconfig.me
+hostnamectl
