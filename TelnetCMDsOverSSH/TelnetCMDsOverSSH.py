@@ -78,7 +78,7 @@ stdin.write(str(DESTINATIONUSERNAME)+'''
         ''')
 time.sleep(4)
 stdin.write('''
-\n
+?
 ''')
 ###!! Reading desired commands from tplinkcommands.txt
 stdin.write('''enable
