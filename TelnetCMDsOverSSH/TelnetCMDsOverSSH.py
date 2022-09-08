@@ -76,6 +76,9 @@ stdin.write(str(DESTINATIONUSERNAME)+'''
 '''+str(DESTINATIONPASSWORD)+'''
 enable
 show lldp neighbor-information interface
+                                           
+                                                
+                                                
 copy run start
 end
 exit
