@@ -34,7 +34,7 @@ def muteOutput():
 
 muteResponseBool = muteOutput()
 
-loc = str(HOST)+"_PINGTEST.txt"
+loc = str(HOST)+"_"+PINGDESTINATION+"_PINGTEST.txt"
 
 print("")
 print("")
