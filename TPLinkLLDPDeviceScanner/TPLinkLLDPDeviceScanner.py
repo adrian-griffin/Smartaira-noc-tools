@@ -63,6 +63,8 @@ EDGETUNNEL.connect(EDGEHOSTNAME, username=RADIUSUSERNAME, password=RADIUSPASSWOR
 
 
 def connectToSecondaryDevice(DESTINATIONHOSTNAME):
+    ######!! BEGIN: Optional block for adding another intermediate jump between the Edge/Jump1 and the final destination
+    '''
     ###!! Retreiving Edge transport object for Edge SSH to be used at a lower level (opening a new channel)
     EDGETUNNEL_Transport = EDGETUNNEL.get_transport()
     ###!! Declaring new vars for defining destination/final host params (The TP-Link Switch(es) in this case)
@@ -71,9 +73,7 @@ def connectToSecondaryDevice(DESTINATIONHOSTNAME):
     ###!! Opening new channel using the local-to-Edge SSH transport object that reaches out to the final destination
     EDGETUNNEL_NewChannel = EDGETUNNEL_Transport.open_channel("direct-tcpip", Dest_addr_TRANSPORT, Local_addr_TRANSPORT)
 
-
-    ######!! BEGIN: Optional block for adding another intermediate jump between the Edge/Jump1 and the final destination
-    '''
+    
     JUMPHOST_Generic = paramiko.SSHClient()
     JUMPHOST_Generic.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     JUMPHOST_Generic.connect(JUMPHOSTGEN_HOSTNAME, username=JUMPHOSTGEN_USERNAME, password=JUMPHOSTGEN_PASSWORD, sock=EDGETUNNEL_NewChannel)
@@ -94,24 +94,20 @@ def connectToSecondaryDevice(DESTINATIONHOSTNAME):
 
     ###!! Passing login credentials through the outer SSH tunnel's STDIN to be then passed into Telnet tunnel
     ###!! Program waits 1.3 seconds before entering the Username and Password to ensure that it doesn't enter the credentials before the connection can be established
-    time.sleep(1.3)
     ###!! Passing final destination Username + newline char to simulate an 'Enter' keypress
-    stdin.write(DESTINATIONUSERNAME+"\n")
-    time.sleep(1.3)
+    #stdin.write(""+str(DESTINATIONUSERNAME)+'''\n\n''')
     ###!! Passing final destination Password + newline char to simulate an 'Enter' keypress
-    stdin.write(DESTINATIONPASSWORD+"\n")
-    time.sleep(1.3)
-    ###!! Reading desired commands from tplinkcommands.txt
-    stdin.write("\n")
-    f = open(CWD+'tplinkcommands.txt','r')
-    command_lines = f.readlines()
-    ###!! Passing desired commands into Telnet terminal from STDIN
-    for command in command_lines:
-        stdin.write(command)
+    #stdin.write(""+str(DESTINATIONPASSWORD)+'''\n\n''')
 
-    ###!! Closing STDIN - Post destination command execution
-    stdin.write("exit\n")
+    import tplinkcommands
+
+    stdin.write(str(DESTINATIONUSERNAME)+'''
+    '''+str(DESTINATIONPASSWORD)+tplinkcommands.telnet_command_str)
+    time.sleep(3)
+
     stdin.close()
+
+
 
 
     ###!! Copying the output file data from the Edge to local machine
