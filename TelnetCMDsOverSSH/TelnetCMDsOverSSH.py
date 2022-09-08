@@ -69,13 +69,15 @@ stdin, stdout, stderr = EDGETUNNEL.exec_command("telnet "+DESTINATIONHOSTNAME+" 
 ###!! Program waits 1.3 seconds before entering the Username and Password to ensure that it doesn't enter the credentials before the connection can be established
 time.sleep(1.3)
 ###!! Passing final destination Username + newline char to simulate an 'Enter' keypress
-stdin.write(""+str(DESTINATIONUSERNAME)+'''\n\n''')
+#stdin.write(""+str(DESTINATIONUSERNAME)+'''\n\n''')
 time.sleep(1.3)
 ###!! Passing final destination Password + newline char to simulate an 'Enter' keypress
-stdin.write(""+str(DESTINATIONPASSWORD)+'''\n\n''')
+#stdin.write(""+str(DESTINATIONPASSWORD)+'''\n\n''')
 
 stdin.write('''
+
 admin
+
 admin
 
 ?
@@ -88,7 +90,6 @@ exit
 
 time.sleep(1.3)
 ###!! Reading desired commands from tplinkcommands.txt
-stdin.write("\n")
 f = open(CWD+'tplinkcommands.txt','r')
 command_lines = f.readlines()
 ###!! Passing desired commands into Telnet terminal from STDIN
