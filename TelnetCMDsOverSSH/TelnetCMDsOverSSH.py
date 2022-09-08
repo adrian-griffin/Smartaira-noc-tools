@@ -43,13 +43,6 @@ EDGETUNNEL = paramiko.SSHClient()
 EDGETUNNEL.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 EDGETUNNEL.connect(EDGEHOSTNAME, username=RADIUSUSERNAME, password=RADIUSPASSWORD)
 
-###!! Retreiving Edge transport object for Edge SSH to be used at a lower level (opening a new channel)
-EDGETUNNEL_Transport = EDGETUNNEL.get_transport()
-###!! Declaring new vars for defining destination/final host params (The TP-Link Switch(es) in this case)
-Dest_addr_TRANSPORT = (DESTINATIONHOSTNAME, SSHPORT)
-Local_addr_TRANSPORT = (EDGEHOSTNAME, SSHPORT)
-###!! Opening new channel using the local-to-Edge SSH transport object that reaches out to the final destination
-EDGETUNNEL_NewChannel = EDGETUNNEL_Transport.open_channel("direct-tcpip", Dest_addr_TRANSPORT, Local_addr_TRANSPORT)
 
 
 ######!! BEGIN: Optional block for adding another intermediate jump between the Edge/Jump1 and the final destination
