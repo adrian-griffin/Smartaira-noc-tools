@@ -79,15 +79,14 @@ stdin.write(str(DESTINATIONUSERNAME)+'''
 time.sleep(4)
 ###!! Reading desired commands from tplinkcommands.txt
 stdin.write('''
+\n
 enable
-
+\n
 show lldp neighbor-information interface
-
+\n
                                                     
                                                 
-                                                              
-
-
+                              
 copy run start
 
 end
