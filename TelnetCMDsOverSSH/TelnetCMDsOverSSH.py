@@ -72,18 +72,10 @@ stdin, stdout, stderr = EDGETUNNEL.exec_command("telnet "+DESTINATIONHOSTNAME+" 
 ###!! Passing final destination Password + newline char to simulate an 'Enter' keypress
 #stdin.write(""+str(DESTINATIONPASSWORD)+'''\n\n''')
 
+import tplinkcommands
+
 stdin.write(str(DESTINATIONUSERNAME)+'''
-'''+str(DESTINATIONPASSWORD)+'''
-enable
-show lldp neighbor-information interface
-                                           
-                                                
-                                                
-copy run start
-end
-exit
-exit
-        ''')
+'''+str(DESTINATIONPASSWORD)+tplinkcommands.telnet_command_str)
 time.sleep(4)
 
 stdin.close()
