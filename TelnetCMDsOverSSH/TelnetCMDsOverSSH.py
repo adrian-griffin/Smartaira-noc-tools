@@ -74,6 +74,8 @@ stdin, stdout, stderr = EDGETUNNEL.exec_command("telnet "+DESTINATIONHOSTNAME+" 
 
 stdin.write(str(DESTINATIONUSERNAME)+'''
 '''+str(DESTINATIONPASSWORD)+'''
+enable
+show lldp neighbor-information interface
 
         ''')
 time.sleep(4)
