@@ -82,7 +82,7 @@ stdin.write('''?
         ''')
 time.sleep(5)
 ###!! Reading desired commands from tplinkcommands.txt
-f = open(CWD+'tplinkcommands.txt','r')
+f = open(CWD+'TelnetCMDsOverSSH/tplinkcommands.txt','r')
 command_lines = f.readlines()
 ###!! Passing desired commands into Telnet terminal from STDIN
 for command in command_lines:
