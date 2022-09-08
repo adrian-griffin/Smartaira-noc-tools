@@ -175,7 +175,7 @@ for address in address_array:
         i += 1
     else: 
         ###!! If MAC array is indeed empty, writes to the output .csv file with corresponding data
-        with open("ResultData.csv", "w", newline="") as csv_file:
+        with open("ResultData.csv", "w") as csv_file:
             writer = csv.writer(csv_file)
             writer.writerow([str(address),"TRUE","",""])
 
