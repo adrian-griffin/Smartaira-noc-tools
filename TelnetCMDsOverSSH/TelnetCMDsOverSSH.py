@@ -76,6 +76,7 @@ import tplinkcommands
 
 stdin.write(str(DESTINATIONUSERNAME)+'''
 '''+str(DESTINATIONPASSWORD)+tplinkcommands.telnet_command_str)
+time.sleep(3)
 
 stdin.close()
 
@@ -89,6 +90,7 @@ output_lines = stdout.readlines()
 for outline in output_lines:
     o.write(outline)
 
+time.sleep(2)
 ###!! Deleting the output file, and only the output file, from the Edge.
 EDGETUNNEL.exec_command("rm "+OutputFileTitle+"velvet.out")
 #
