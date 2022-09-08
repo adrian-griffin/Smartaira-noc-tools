@@ -26,13 +26,13 @@ config = configparser.ConfigParser()
 config.read(CWD+'credentials.ini')
 config.sections()
 
-EDGEHOSTNAME=config['EDGE_CREDENTIALS']['EdgeHostname']
-RADIUSUSERNAME=config['EDGE_CREDENTIALS']['RadiusUsername']
-RADIUSPASSWORD=config['EDGE_CREDENTIALS']['RadiusPassword']
+EDGEHOSTNAME=str(config['EDGE_CREDENTIALS']['EdgeHostname'])
+RADIUSUSERNAME=str(config['EDGE_CREDENTIALS']['RadiusUsername'])
+RADIUSPASSWORD=str(config['EDGE_CREDENTIALS']['RadiusPassword'])
 
-DESTINATIONHOSTNAME=config['DESTINATION_CREDENTIALS']['DestinationHostname']
-DESTINATIONUSERNAME=config['DESTINATION_CREDENTIALS']['DestinationUsername']
-DESTINATIONPASSWORD=config['DESTINATION_CREDENTIALS']['DestinationPassword']
+DESTINATIONHOSTNAME=str(config['DESTINATION_CREDENTIALS']['DestinationHostname'])
+DESTINATIONUSERNAME=str(config['DESTINATION_CREDENTIALS']['DestinationUsername'])
+DESTINATIONPASSWORD=str(config['DESTINATION_CREDENTIALS']['DestinationPassword'])
 
 SSHPORT=int(config['PORT_OPTIONS']['SSHPort'])
 TELNETPORT=int(config['PORT_OPTIONS']['TelnetPort'])
