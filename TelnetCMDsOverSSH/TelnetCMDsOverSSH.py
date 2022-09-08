@@ -76,28 +76,13 @@ stdin.write(str(DESTINATIONUSERNAME)+'''
 '''+str(DESTINATIONPASSWORD)+'''
 enable
 show lldp neighbor-information interface
-
+copy run start
+end
+exit
+exit
         ''')
 time.sleep(4)
-stdin.write('''
-?
-''')
-###!! Reading desired commands from tplinkcommands.txt
-stdin.write('''enable
-\n
-show lldp neighbor-information interface
-\n
-                                                    
-                                                
-                              
-copy run start
 
-end
-
-exit
-
-exit
-''')
 stdin.close()
 
 
