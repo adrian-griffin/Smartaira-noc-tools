@@ -72,8 +72,8 @@ stdin, stdout, stderr = EDGETUNNEL.exec_command("telnet "+DESTINATIONHOSTNAME+" 
 ###!! Passing final destination Password + newline char to simulate an 'Enter' keypress
 #stdin.write(""+str(DESTINATIONPASSWORD)+'''\n\n''')
 
-stdin.write('''admin
-admin
+stdin.write(str(DESTINATIONUSERNAME)+'''
+'''+str(DESTINATIONPASSWORD)+'''
 
         ''')
 
