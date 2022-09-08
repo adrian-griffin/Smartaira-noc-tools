@@ -67,34 +67,28 @@ stdin, stdout, stderr = EDGETUNNEL.exec_command("telnet "+DESTINATIONHOSTNAME+" 
 
 ###!! Passing login credentials through the outer SSH tunnel's STDIN to be then passed into Telnet tunnel
 ###!! Program waits 1.3 seconds before entering the Username and Password to ensure that it doesn't enter the credentials before the connection can be established
-time.sleep(1.3)
 ###!! Passing final destination Username + newline char to simulate an 'Enter' keypress
 #stdin.write(""+str(DESTINATIONUSERNAME)+'''\n\n''')
-time.sleep(1.3)
 ###!! Passing final destination Password + newline char to simulate an 'Enter' keypress
 #stdin.write(""+str(DESTINATIONPASSWORD)+'''\n\n''')
 
-stdin.write('''
-
+stdin.write('''admin
 admin
-
-admin
-
-?
-
-exit
-exit
-        
 
         ''')
 
-time.sleep(1.3)
+stdin.write('''?
+
+        ''')
+time.sleep(5)
 ###!! Reading desired commands from tplinkcommands.txt
 f = open(CWD+'tplinkcommands.txt','r')
 command_lines = f.readlines()
 ###!! Passing desired commands into Telnet terminal from STDIN
 for command in command_lines:
-    stdin.write(command)
+    stdin.write(''''''+str(command)+'''
+
+            ''')
 
 ###!! Closing STDIN - Post destination command execution
 stdin.write("exit\n")

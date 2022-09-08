@@ -1,0 +1,20 @@
+Trying 10.53.9.47...
+Connected to 10.53.9.47.
+Escape character is '^]'.
+
+***************** User Access Login ********************
+
+User:admin
+Password:
+
+
+WEA-TP-Link-115>
+
+WEA-TP-Link-115>        #2022-09-08 11:31:08,[User]/3/Login the CLI by admin on vty0 (10.53.9.1).
+[3D[1A
+ broadcast            - Write message to all users logged in
+ enable               - Enter privileged EXEC mode
+ logout               - Logout the system
+ exit                 - Exit current mode
+
+WEA-TP-Link-115>        a
