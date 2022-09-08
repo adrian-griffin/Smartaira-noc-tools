@@ -78,16 +78,24 @@ stdin.write(str(DESTINATIONUSERNAME)+'''
         ''')
 time.sleep(4)
 ###!! Reading desired commands from tplinkcommands.txt
-f = open(CWD+'tplinkcommands.txt','r')
-command_lines = f.readlines()
-###!! Passing desired commands into Telnet terminal from STDIN
-for command_l in command_lines:
-    stdin.write(str(command_l))
-time.sleep(15)
+stdin.write('''
+enable
+
+show lldp neighbor-information interface
+
+                                                    
+                                                
+                                                              
 
 
-###!! Closing STDIN - Post destination command execution
-f.close()
+copy run start
+
+end
+
+exit
+
+exit
+''')
 stdin.close()
 
 
