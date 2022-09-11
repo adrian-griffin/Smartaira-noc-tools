@@ -23,5 +23,5 @@ else:
 
 
 s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+VALID_DOMAIN+'' ],
-    stdout=subprocess.DEVNULL
+    stdout=subprocess.DEVNULL,
     stderr=subprocess.STDOUT)
