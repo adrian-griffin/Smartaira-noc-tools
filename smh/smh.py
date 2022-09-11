@@ -19,8 +19,7 @@ loganEdgeProperties = [
 if PROPERTY in loganEdgeProperties:
     VALID_DOMAIN = "logan.smartaira360.com"
 else: 
-    VALID_DOMAIN = PROPERTY+".smartaira360.com"
+    VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
 
 
-s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+VALID_DOMAIN+'' ],
-    stdout=subprocess.DEVNULL)
+s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+VALID_DOMAIN+'' ])
