@@ -25,5 +25,5 @@ else:
 s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+VALID_DOMAIN+'' ],
     stdout=subprocess.DEVNULL)
 
-if str(s.stderr) = 'None':
+if str(s.stderr) == 'None':
     print("Unable to connect to property edge!")
