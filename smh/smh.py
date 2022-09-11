@@ -5,7 +5,9 @@ from sys import stdout
 
 parser = argparse.ArgumentParser(description="SSH into an Edge using only the property abbreviation (eg. smh alno)")
 parser.add_argument("PropertyAbbreviation", type=str)
+parser.add_argument("-c", type=str)
 args = parser.parse_args()
+
 
 PROPERTY_lower = args.PropertyAbbreviation
 PROPERTY = str(PROPERTY_lower).upper()
