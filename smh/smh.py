@@ -24,4 +24,4 @@ else:
 def sshProperty(VALID_DOMAIN):
     s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+VALID_DOMAIN+'' ])
 
-sshProperty()
+sshProperty(VALID_DOMAIN)
