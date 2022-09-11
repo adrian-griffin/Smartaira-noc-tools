@@ -11,7 +11,7 @@ PROPERTY = args.PropertyAbbreviation
 try:
     s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+PROPERTY+'.smartaira360.com' ])
 except:
-    s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+'logan'+'.smartaira360.com' ])
+    s = subprocess.run( [ 'ssh', 'agriffin'+'@'+'logan'+'.smartaira360.com' ])
     try: 
         s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+'logan'+'.smartaira360.com' ])
     except:
