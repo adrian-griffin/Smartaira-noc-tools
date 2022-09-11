@@ -8,11 +8,15 @@ args = parser.parse_args()
 
 PROPERTY = args.PropertyAbbreviation
 
-try:
-    s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+PROPERTY+'.smartaira360.com' ])
-except:
-    s = subprocess.run( [ 'ssh', 'agriffin'+'@'+'logan'+'.smartaira360.com' ])
-    try: 
-        s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+'logan'+'.smartaira360.com' ])
-    except:
-        s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+PROPERTY+'.bluerim.net' ])
+test_domain = str(PROPERTY)+".smartaira360.com"
+
+p = subprocess.run( [ 'ping', '-c 1 -s 1 -q', str(test_domain) ],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.STDOUT)
+if int(p.returncode) < 1:
+    VALID_DOMAIN = PROPERTY+".smartaira360.com"
+else: 
+    VALID_DOMAIN = "logan.smartaira360.com"
+
+
+s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+VALID_DOMAIN+'' ])
