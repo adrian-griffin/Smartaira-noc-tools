@@ -7,6 +7,7 @@ parser = argparse.ArgumentParser(description="SSH into an Edge using only the pr
 parser.add_argument("PropertyAbbreviation", type=str, help="Property abbreviation (ALNO, WEA, RRR, OPA, OMV, OMView, etc.)")
 
 parser.add_argument('-c','--confluence', type=str, help="Open Confluence page for property")
+parser.add_argument('-g','--graphical', type=str, help="Open Edge admin GUI page")
 
 global args
 
