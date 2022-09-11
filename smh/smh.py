@@ -14,4 +14,4 @@ except:
     try: 
         s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+PROPERTY+'.bluerim.net' ])
     except:
-            s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+'logan'+'.smartaira360.com' ])
+        s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+'logan'+'.smartaira360.com' ])
