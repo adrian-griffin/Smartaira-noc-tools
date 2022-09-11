@@ -5,6 +5,10 @@ import webbrowser
 
 parser = argparse.ArgumentParser(description="SSH into an Edge using only the property abbreviation (eg. smh alno)")
 parser.add_argument("PropertyAbbreviation", type=str, help="Use property abbreviation (ALNO, WEA, RRR, OPA, OMV, OMView, etc.)")
+
+parser.add_argument('-c')
+parser.parse_args(['-c', 'Confluence'])
+
 global args
 
 args = parser.parse_args()
