@@ -42,7 +42,7 @@ if PROPERTY in loganEdgeProperties:
 else: 
     VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
 
-if parse.graphical:
+if args.graphical:
     edgeGUIProperty(VALID_DOMAIN)
 
 
