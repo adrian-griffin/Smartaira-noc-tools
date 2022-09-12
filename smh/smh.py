@@ -21,9 +21,10 @@ global args
 
 
 CWD_unsan = os.getcwd()
-CWD_partial = CWD_unsan.replace("\\","/")
-CWD = CWD_partial
+CWD = CWD_unsan.replace("\\","/")
+
 config = configparser.ConfigParser()
+print("Directory: "+CWD)
 config.read(CWD+'/creds.ini')
 config.sections()
 
