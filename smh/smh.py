@@ -4,6 +4,7 @@ import time
 import subprocess
 import sys
 import webbrowser
+import configparser
 
 import contextlib
 import io
@@ -18,18 +19,28 @@ parser.add_argument('-g','--graphical', action="store_true", help="Open Edge adm
 global SSHBOOL
 global args
 
+
+CWD_unsan = os.getcwd()
+CWD_partial = CWD_unsan.replace("\\","/")
+CWD = CWD_partial+"/"
+config = configparser.ConfigParser()
+config.read(CWD+'credentials.ini')
+config.sections()
+
+
+#RADIUS_PASSWORD = EDGEHOSTNAME=str(config['RADIUS_CREDENTIALS']['RadiusPassword'])
+RADIUS_USERNAME = EDGEHOSTNAME=str(config['RADIUS_CREDENTIALS']['RadiusUsername'])
+
 SSHBOOL = True
 
 
 def sshProperty(VALID_DOMAIN):
-    s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+VALID_DOMAIN+'' ])
+    s = subprocess.run( [ 'ssh', ''+str(RADIUS_USERNAME)+'@'+VALID_DOMAIN+'' ])
 
 
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
-    webbrowser.open(url,0,True)
-    time.sleep(2)
-    
+    webbrowser.open(url,0,True)    
     os._exit(0)
 
 
@@ -52,8 +63,6 @@ else:
 
 if args.graphical:
     edgeGUIProperty(VALID_DOMAIN)
-    SSHBOOL = False
-    quit()
 
 if SSHBOOL == True:
     sshProperty(VALID_DOMAIN)
