@@ -24,8 +24,7 @@ CWD_unsan = os.getcwd()
 CWD = CWD_unsan.replace("\\","/")
 
 config = configparser.ConfigParser()
-print("Directory: "+CWD)
-config.read(CWD+'/creds.ini')
+config.read(CWD+'/smh/creds.ini')
 config.sections()
 
 global RADIUS_PASSWORD
