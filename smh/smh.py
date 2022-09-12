@@ -24,7 +24,7 @@ CWD_unsan = os.getcwd()
 CWD_partial = CWD_unsan.replace("\\","/")
 CWD = CWD_partial+"/"
 config = configparser.ConfigParser()
-config.read(CWD+'credentials.ini')
+config.read(CWD+'creds.ini')
 config.sections()
 
 
