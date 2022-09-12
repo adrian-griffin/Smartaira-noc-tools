@@ -9,6 +9,14 @@ import configparser
 import contextlib
 import io
 
+
+global RADIUS_PASSWORD
+global RADIUS_USERNAME
+
+RADIUS_PASSWORD = "agriffin"
+RADIUS_USERNAME = "Y*FNDrn8quNQ.Bq-"
+
+
 parser = argparse.ArgumentParser(description="SSH into an Edge using only the property abbreviation (eg. smh alno)")
 parser.add_argument("PropertyAbbreviation", type=str, help="Property abbreviation (ALNO, WEA, LOGANOFFICE, OPA, OMV, OMView, etc.)")
 
@@ -26,12 +34,6 @@ CWD = CWD_unsan.replace("\\","/")
 config = configparser.ConfigParser()
 config.read(CWD+'/smh/creds.ini')
 config.sections()
-
-global RADIUS_PASSWORD
-global RADIUS_USERNAME
-
-RADIUS_PASSWORD = str(config['RADIUS_CREDENTIALS']['RadiusPassword'])
-RADIUS_USERNAME = str(config['RADIUS_CREDENTIALS']['RadiusUsername'])
 
 SSHBOOL = True
 
