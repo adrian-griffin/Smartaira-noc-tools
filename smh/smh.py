@@ -14,7 +14,7 @@ global args
 args = parser.parse_args()
 
 PROPERTY_lower = args.PropertyAbbreviation
-PROPERTY = str(PROPERTY_lower)
+PROPERTY = str(PROPERTY_lower).upper()
 
 
 
