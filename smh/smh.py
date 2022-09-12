@@ -22,7 +22,7 @@ global args
 
 CWD_unsan = os.getcwd()
 CWD_partial = CWD_unsan.replace("\\","/")
-CWD = CWD_partial+"/"
+CWD = CWD_partial
 config = configparser.ConfigParser()
 config.read(CWD+'creds.ini')
 config.sections()
