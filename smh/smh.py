@@ -13,8 +13,8 @@ import io
 global RADIUS_PASSWORD
 global RADIUS_USERNAME
 
-RADIUS_PASSWORD = "agriffin"
-RADIUS_USERNAME = "Y*FNDrn8quNQ.Bq-"
+RADIUS_PASSWORD = "Y*FNDrn8quNQ.Bq-"
+RADIUS_USERNAME = "agriffin"
 
 
 parser = argparse.ArgumentParser(description="SSH into an Edge using only the property abbreviation (eg. smh alno)")
