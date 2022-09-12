@@ -28,8 +28,8 @@ config.read(CWD+'creds.ini')
 config.sections()
 
 
-#RADIUS_PASSWORD = EDGEHOSTNAME=str(config['RADIUS_CREDENTIALS']['RadiusPassword'])
-RADIUS_USERNAME = EDGEHOSTNAME=str(config['RADIUS_CREDENTIALS']['RadiusUsername'])
+#RADIUS_PASSWORD = str(config['RADIUS_CREDENTIALS']['RadiusPassword'])
+RADIUS_USERNAME = str(config['RADIUS_CREDENTIALS']['RadiusUsername'])
 
 SSHBOOL = True
 
