@@ -1,7 +1,6 @@
 import argparse
-from ast import parse
 import os
-from pickle import FALSE, TRUE
+import time
 import subprocess
 import webbrowser
 
@@ -25,6 +24,7 @@ def sshProperty(VALID_DOMAIN):
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
     webbrowser.open(url)
+    time.sleep(2)
     os._exit(0)
 
 
