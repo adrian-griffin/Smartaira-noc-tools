@@ -27,17 +27,18 @@ config = configparser.ConfigParser()
 config.read(CWD+'creds.ini')
 config.sections()
 
+global RADIUS_PASSWORD
+global RADIUS_USERNAME
 
-#RADIUS_PASSWORD = str(config['RADIUS_CREDENTIALS']['RadiusPassword'])
+RADIUS_PASSWORD = str(config['RADIUS_CREDENTIALS']['RadiusPassword'])
 RADIUS_USERNAME = str(config['RADIUS_CREDENTIALS']['RadiusUsername'])
 
 SSHBOOL = True
 
 
 def sshProperty(VALID_DOMAIN):
-    s = subprocess.run( [ 'ssh', ''+str(RADIUS_USERNAME)+'@'+VALID_DOMAIN+'' ])
-
-
+    s = subprocess.run( [ 'ssh', ''+str(RADIUS_USERNAME)+'@'+VALID_DOMAIN+'' ],stdin=subprocess.PIPE)
+    s.stdin.write(RADIUS_PASSWORD)
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
     webbrowser.open(url,0,True)    
