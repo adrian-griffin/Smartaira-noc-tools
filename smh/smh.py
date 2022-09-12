@@ -46,7 +46,8 @@ else:
 
 if args.graphical:
     edgeGUIProperty(VALID_DOMAIN)
-    SSHBOOL = False
+    SSHBOOL = Falsei
+    quit()
 
 if SSHBOOL == True:
     sshProperty(VALID_DOMAIN)
