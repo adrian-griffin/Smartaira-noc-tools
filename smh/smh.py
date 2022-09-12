@@ -2,6 +2,7 @@ import argparse
 import os
 import time
 import subprocess
+import sys
 import webbrowser
 
 parser = argparse.ArgumentParser(description="SSH into an Edge using only the property abbreviation (eg. smh alno)")
@@ -23,8 +24,9 @@ def sshProperty(VALID_DOMAIN):
 
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
-    EDGEGRAPHICAL = webbrowser.open(url,0,True)
+    webbrowser.open(url,0,True)
     time.sleep(2)
+    
     os._exit(0)
 
 
@@ -46,7 +48,7 @@ else:
     VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
 
 if args.graphical:
-    edgeGUIProperty(VALID_DOMAIN)
+    sys.stdout = edgeGUIProperty(VALID_DOMAIN)
     SSHBOOL = False
     quit()
 
