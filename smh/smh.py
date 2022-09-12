@@ -15,7 +15,7 @@ parser.add_argument('-g','--graphical', action="store_true", help="Open Edge adm
 global SSHBOOL
 global args
 
-SSHBOOL = False
+SSHBOOL = True
 
 
 def sshProperty(VALID_DOMAIN):
@@ -47,5 +47,7 @@ else:
 if args.graphical:
     edgeGUIProperty(VALID_DOMAIN)
     SSHBOOL = False
-    
+
+if SSHBOOL == True:
+    sshProperty(VALID_DOMAIN)
 
