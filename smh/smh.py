@@ -23,7 +23,7 @@ def sshProperty(VALID_DOMAIN):
 
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
-    webbrowser.open(url)
+    webbrowser.open(url, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     time.sleep(2)
     os._exit(0)
 
