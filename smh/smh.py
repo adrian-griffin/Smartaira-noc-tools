@@ -37,8 +37,8 @@ SSHBOOL = True
 
 
 def sshProperty(VALID_DOMAIN):
-    s = subprocess.run( [ 'ssh', ''+str(RADIUS_USERNAME)+'@'+VALID_DOMAIN+'' ],stdin=subprocess.PIPE)
-    s.stdin.write(RADIUS_PASSWORD)
+    s = subprocess.run( [ 'ssh', ''+str(RADIUS_USERNAME)+'@'+VALID_DOMAIN+'' ],stdin=str(RADIUS_PASSWORD))
+    
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
     webbrowser.open(url,0,True)    
