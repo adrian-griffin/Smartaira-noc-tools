@@ -1,6 +1,7 @@
 import argparse
 from ast import parse
 import os
+from pickle import FALSE, TRUE
 import subprocess
 import webbrowser
 
@@ -11,7 +12,11 @@ parser.add_argument("PropertyAbbreviation", type=str, help="Property abbreviatio
 parser.add_argument('-c','--confluence', action="store_true", help="Open Confluence page for property")
 parser.add_argument('-g','--graphical', action="store_true", help="Open Edge admin GUI page in webbrowser")
 
+global SSHBOOL
 global args
+
+SSHBOOL = False
+
 
 def sshProperty(VALID_DOMAIN):
     s = subprocess.run( [ 'ssh', ''+'agriffin'+'@'+VALID_DOMAIN+'' ])
@@ -20,9 +25,6 @@ def sshProperty(VALID_DOMAIN):
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
     webbrowser.open(url)
-
-
-
 
 
 
@@ -44,12 +46,6 @@ else:
 
 if args.graphical:
     edgeGUIProperty(VALID_DOMAIN)
+    SSHBOOL = False
+    
 
-
-
-
-
-
-
-
-sshProperty(VALID_DOMAIN)
