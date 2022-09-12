@@ -51,8 +51,7 @@ else:
     VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
 
 if args.graphical:
-    with contextlib.redirect_stdout(io.StringIO()):
-        edgeGUIProperty(VALID_DOMAIN)
+    edgeGUIProperty(VALID_DOMAIN)
     SSHBOOL = False
     quit()
 
