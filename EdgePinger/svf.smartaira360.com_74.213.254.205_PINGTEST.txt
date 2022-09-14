@@ -1,0 +1,35 @@
+Fri Sep  9 12:32:02 CDT 2022: PING 74.213.254.205 (74.213.254.205): 56 data bytes
+Fri Sep  9 12:32:02 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=0 ttl=255 time=49.780 ms
+Fri Sep  9 12:32:03 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=1 ttl=255 time=49.467 ms
+Fri Sep  9 12:32:05 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=2 ttl=255 time=49.432 ms
+Fri Sep  9 12:32:06 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=3 ttl=255 time=266.983 ms
+Fri Sep  9 12:32:06 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=4 ttl=255 time=49.653 ms
+Fri Sep  9 12:32:07 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=5 ttl=255 time=50.475 ms
+Fri Sep  9 12:32:09 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=6 ttl=255 time=49.450 ms
+Fri Sep  9 12:32:10 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=7 ttl=255 time=49.448 ms
+Fri Sep  9 12:32:11 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=8 ttl=255 time=49.434 ms
+Fri Sep  9 12:32:12 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=9 ttl=255 time=49.444 ms
+Fri Sep  9 12:32:13 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=10 ttl=255 time=49.581 ms
+Fri Sep  9 12:32:14 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=11 ttl=255 time=49.493 ms
+Fri Sep  9 12:32:15 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=12 ttl=255 time=49.457 ms
+Fri Sep  9 12:32:16 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=13 ttl=255 time=49.545 ms
+Fri Sep  9 12:32:17 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=14 ttl=255 time=49.410 ms
+Fri Sep  9 12:32:18 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=15 ttl=255 time=49.471 ms
+Fri Sep  9 12:32:19 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=16 ttl=255 time=49.466 ms
+Fri Sep  9 12:32:20 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=17 ttl=255 time=49.462 ms
+Fri Sep  9 12:32:21 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=18 ttl=255 time=49.713 ms
+Fri Sep  9 12:32:22 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=19 ttl=255 time=64.338 ms
+Fri Sep  9 12:32:23 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=20 ttl=255 time=62.009 ms
+Fri Sep  9 12:32:24 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=21 ttl=255 time=49.420 ms
+Fri Sep  9 12:32:25 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=22 ttl=255 time=51.552 ms
+Fri Sep  9 12:32:26 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=23 ttl=255 time=49.828 ms
+Fri Sep  9 12:32:27 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=24 ttl=255 time=49.599 ms
+Fri Sep  9 12:32:28 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=25 ttl=255 time=49.502 ms
+Fri Sep  9 12:32:29 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=26 ttl=255 time=49.457 ms
+Fri Sep  9 12:32:30 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=27 ttl=255 time=52.854 ms
+Fri Sep  9 12:32:31 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=28 ttl=255 time=49.469 ms
+Fri Sep  9 12:32:32 CDT 2022: 64 bytes from 74.213.254.205: icmp_seq=29 ttl=255 time=49.430 ms
+Fri Sep  9 12:32:32 CDT 2022: 
+Fri Sep  9 12:32:32 CDT 2022: --- 74.213.254.205 ping statistics ---
+Fri Sep  9 12:32:32 CDT 2022: 30 packets transmitted, 30 packets received, 0.0% packet loss
+Fri Sep  9 12:32:32 CDT 2022: round-trip min/avg/max/stddev = 49.410/57.888/266.983/38.979 ms
