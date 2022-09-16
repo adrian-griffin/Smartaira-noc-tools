@@ -40,6 +40,7 @@ SSHBOOL = True
 
 def sshProperty(VALID_DOMAIN):
     s = subprocess.run( [ 'ssh', ''+str(RADIUS_USERNAME)+'@'+VALID_DOMAIN+'' ])
+    print(s.returncode)
     
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
@@ -56,7 +57,7 @@ PROPERTY = str(PROPERTY_lower).upper()
 
 
 loganEdgeProperties = [
-    'CBS','CCA','DCA','EHA','HSM','KKA','LAB','LOGANOFFICE','NHA','OFA','OMV','OMVIEW','WRA'
+    'CBS','CCA','EHA','HSM','KKA','LAB','LOGANOFFICE','NHA','OFA','OMV','OMVIEW','WRA'
 ]
 
 if PROPERTY in loganEdgeProperties:
