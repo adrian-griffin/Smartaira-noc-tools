@@ -29,7 +29,7 @@ CWD_unsan = os.getcwd()
 CWD = CWD_unsan.replace("\\","/")
 
 config = configparser.ConfigParser()
-config.read('~/NOC_Radius_Credentials.ini')
+config.read('/home/$USER/NOC_Radius_Credentials.ini')
 config.sections()
 
 SSHBOOL = True
