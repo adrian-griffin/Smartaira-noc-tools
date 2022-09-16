@@ -14,6 +14,10 @@ import io
 global RADIUS_PASSWORD
 global RADIUS_USERNAME
 
+RADIUS_PASSWORD = config['EDGE_CREDENTIALS']['RadiusUsername']
+RADIUS_USERNAME = config['EDGE_CREDENTIALS']['RadiusPassword']
+
+
 parser = argparse.ArgumentParser(description="SSH into an Edge using only the property abbreviation (eg. smh alno)")
 parser.add_argument("PropertyAbbreviation", type=str, help="Property abbreviation (ALNO, WEA, LOGANOFFICE, OPA, OMV, OMView, etc.)")
 
@@ -33,8 +37,6 @@ config.read('~/NOC_Radius_Credentials.ini')
 config.sections()
 
 SSHBOOL = True
-RADIUS_PASSWORD = config['EDGE_CREDENTIALS']['RadiusUsername']
-RADIUS_USERNAME = config['EDGE_CREDENTIALS']['RadiusPassword']
 
 
 def sshProperty(VALID_DOMAIN):
