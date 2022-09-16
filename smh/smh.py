@@ -62,7 +62,8 @@ loganEdgeProperties = [
 ]
 
 if PROPERTY in loganEdgeProperties:
-    VALID_DOMAIN = "logan.smartaira360.com"
+    #VALID_DOMAIN = "logan.smartaira360.com"
+    VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
 else: 
     VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
 
