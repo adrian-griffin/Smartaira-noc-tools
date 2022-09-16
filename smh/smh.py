@@ -1,15 +1,8 @@
 import argparse
 import os
-import time
 import subprocess
-import sys
 import webbrowser
 import configparser
-
-import contextlib
-import io
-
-## Hi
 
 global RADIUS_PASSWORD
 global RADIUS_USERNAME
