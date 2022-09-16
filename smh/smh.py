@@ -15,7 +15,7 @@ global RADIUS_PASSWORD
 global RADIUS_USERNAME
 
 parser = argparse.ArgumentParser(description="SSH into an Edge using only the property abbreviation (eg. smh alno)")
-parser.add_argument("PropertyAbbreviation", type=str, help="Property abbreviation (ALNO, WEA, LOGANOFFICE, OPA, OMV, OMView, etc.)")
+parser.add_argument("PropertyAbbreviation", type=str, help="Property abbreviation (ALNO, WEA, OPA, OMV, OMView, etc.)")
 
 
 parser.add_argument('-c','--confluence', action="store_true", help="Open Confluence page for property")
@@ -53,17 +53,7 @@ args = parser.parse_args()
 PROPERTY_lower = args.PropertyAbbreviation
 PROPERTY = str(PROPERTY_lower).upper()
 
-
-
-loganEdgeProperties = [
-    'CBS','CCA','EHA','HSM','KKA','LAB','LOGANOFFICE','NHA','OFA','OMV','OMVIEW','WRA'
-]
-
-if PROPERTY in loganEdgeProperties:
-    #VALID_DOMAIN = "logan.smartaira360.com"
-    VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
-else: 
-    VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
+VALID_DOMAIN = str(PROPERTY)+".smartaira360.com"
 
 if args.graphical:
     edgeGUIProperty(VALID_DOMAIN)
