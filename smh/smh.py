@@ -9,6 +9,7 @@ import configparser
 import contextlib
 import io
 
+## Hi
 
 global RADIUS_PASSWORD
 global RADIUS_USERNAME
@@ -40,7 +41,7 @@ SSHBOOL = True
 
 def sshProperty(VALID_DOMAIN):
     s = subprocess.run( [ 'ssh', ''+str(RADIUS_USERNAME)+'@'+VALID_DOMAIN+'' ])
-    print(s.returncode)
+
     
 def edgeGUIProperty(VALID_DOMAIN):
     url = "http://"+str(VALID_DOMAIN)+"/admin"
