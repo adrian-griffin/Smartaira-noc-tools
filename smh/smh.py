@@ -33,8 +33,8 @@ config.read('~/NOC_Radius_Credentials.ini')
 config.sections()
 
 SSHBOOL = True
-RADIUS_PASSWORD = config['EDGE_CREDENTIALS']['RadiusUsername']
-RADIUS_USERNAME = config['EDGE_CREDENTIALS']['RadiusPassword']
+RADIUS_PASSWORD = config['RADIUS_CREDENTIALS']['RadiusUsername']
+RADIUS_USERNAME = config['RADIUS_CREDENTIALS']['RadiusPassword']
 
 
 def sshProperty(VALID_DOMAIN):
