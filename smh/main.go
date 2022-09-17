@@ -26,4 +26,11 @@ func main() {
 		log.Fatal(err)
 	}
 	defer conn.Close()
+
+	session, err := conn.NewSession()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer session.Close()
+
 }
