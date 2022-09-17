@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// ssh config
-	hostKeyCallback, err := knownhosts.New("~/.ssh/known_hosts")
+	hostKeyCallback, err := knownhosts.New("/home/agriffin/.ssh/known_hosts")
 	if err != nil {
 		log.Fatal(err)
 	}
