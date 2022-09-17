@@ -26,8 +26,8 @@ config.read('/home/agriffin/NOC_Radius_Credentials.ini')
 config.sections()
 
 SSHBOOL = True
-RADIUS_PASSWORD = config['RADIUS_CREDENTIALS']['RadiusUsername']
-RADIUS_USERNAME = config['RADIUS_CREDENTIALS']['RadiusPassword']
+RADIUS_PASSWORD = config['RADIUS_CREDENTIALS']['RadiusPassword']
+RADIUS_USERNAME = config['RADIUS_CREDENTIALS']['RadiusUsername']
 
 
 def sshProperty(VALID_DOMAIN):
