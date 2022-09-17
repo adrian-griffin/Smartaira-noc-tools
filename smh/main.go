@@ -14,14 +14,14 @@ func main() {
 		log.Fatal(err)
 	}
 	config := &ssh.ClientConfig{
-		User: "agriffin",
+		User: "root",
 		Auth: []ssh.AuthMethod{
-			ssh.Password("Y*FNDrn8quNQ.Bq-"),
+			ssh.Password("TfoK%55s2#&24%!a"),
 		},
 		HostKeyCallback: hostKeyCallback,
 	}
 	// connect ot ssh server
-	conn, err := ssh.Dial("tcp", "wea.smartaira360.com:22", config)
+	conn, err := ssh.Dial("tcp", "137.184.3.254:22", config)
 	if err != nil {
 		log.Fatal(err)
 	}
