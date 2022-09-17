@@ -33,6 +33,22 @@ func main() {
 	}
 	defer session.Close()
 
+
+	    // configure terminal mode
+		modes := ssh.TerminalModes{
+			ssh.ECHO:          0,     // supress echo
+	
+		}
+		// run terminal session
+		if err := session.RequestPty("xterm", 50, 80, modes); err != nil {
+			log.Fatal(err)
+		}
+		// start remote shell
+		if err := session.Shell(); err != nil {
+			log.Fatal(err)
+		}
+
+
 	var buff bytes.Buffer
 	session.Stdout = &buff
 	if err := session.Run(“ls -la”); err != nil {
