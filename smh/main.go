@@ -14,9 +14,9 @@ func main() {
 		log.Fatal(err)
 	}
 	config := &ssh.ClientConfig{
-		User: "ubuntu",
+		User: "agriffin",
 		Auth: []ssh.AuthMethod{
-			ssh.Password("password"),
+			ssh.Password("Y*FNDrn8quNQ.Bq-"),
 		},
 		HostKeyCallback: hostKeyCallback,
 	}
