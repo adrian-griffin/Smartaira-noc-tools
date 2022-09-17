@@ -33,4 +33,11 @@ func main() {
 	}
 	defer session.Close()
 
+	var buff bytes.Buffer
+	session.Stdout = &buff
+	if err := session.Run(“ls -la”); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(buff.String())
+
 }
