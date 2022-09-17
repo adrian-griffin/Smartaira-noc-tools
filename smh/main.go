@@ -21,7 +21,7 @@ func main() {
 		HostKeyCallback: hostKeyCallback,
 	}
 	// connect ot ssh server
-	conn, err := ssh.Dial("tcp", "wea.smartaira360.com", config)
+	conn, err := ssh.Dial("tcp", "wea.smartaira360.com:22", config)
 	if err != nil {
 		log.Fatal(err)
 	}
