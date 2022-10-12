@@ -23,7 +23,8 @@ CWD = CWD_partial+"/"
 
 ###!! Gathering EDGE/RADIUS, TP-Link, and local machine login credentials
 config = configparser.ConfigParser()
-config.read(CWD+'credentials.ini')
+#config.read(CWD+'credentials.ini')
+config.read('C:/Users/AdrianGriffin/Documents/GitHub/Smartaira-noc-tools/TelnetCMDsOverSSH/credentials.ini')
 config.sections()
 
 EDGEHOSTNAME=str(config['EDGE_CREDENTIALS']['EdgeHostname'])
@@ -62,7 +63,7 @@ JUMPHOST_Generic.connect(JUMPHOSTGEN_HOSTNAME, username=JUMPHOSTGEN_USERNAME, pa
 OutputFileTitle = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(30))
 
 ###!! Initiating Telnet tunnel into destination host/TP-Link && Creating variables to pass STDIN, STDOUT, and STDERR data into. Data is tee'd into a random file name.
-stdin, stdout, stderr = EDGETUNNEL.exec_command("telnet "+DESTINATIONHOSTNAME+" | tee -i "+OutputFileTitle+"velvet.out")
+stdin, stdout, stderr = EDGETUNNEL.exec_command("telnet "+DESTINATIONHOSTNAME+" | tee -i "+OutputFileTitle+"jumphost.out")
 
 
 ###!! Passing login credentials through the outer SSH tunnel's STDIN to be then passed into Telnet tunnel
@@ -82,9 +83,9 @@ stdin.close()
 
 
 ###!! Copying the output file data from the Edge to local machine
-stdin, stdout, stderr = EDGETUNNEL.exec_command("cat "+OutputFileTitle+"velvet.out")
+stdin, stdout, stderr = EDGETUNNEL.exec_command("cat "+OutputFileTitle+"jumphost.out")
 
-o = open(CWD+OutputFileTitle+'velvet.out','w')
+o = open(CWD+OutputFileTitle+'jumphost.out','w')
 output_lines = stdout.readlines()
 ###!! Writing data from Edge to local machine
 for outline in output_lines:
@@ -92,7 +93,7 @@ for outline in output_lines:
 
 time.sleep(2)
 ###!! Deleting the output file, and only the output file, from the Edge.
-EDGETUNNEL.exec_command("rm "+OutputFileTitle+"velvet.out")
+EDGETUNNEL.exec_command("rm "+OutputFileTitle+"jumphost.out")
 #
 
 
