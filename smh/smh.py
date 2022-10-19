@@ -22,9 +22,9 @@ parser = argparse.ArgumentParser(description="SSH into an Edge using only the pr
 parser.add_argument("PropertyAbbreviation", type=str, help="Property abbreviation (ALNO, WEA, OPA, OMV, OMView, etc.)")
 
 
-parser.add_argument('-c','--confluence', action="store_true", help="Open Confluence page for property")
-parser.add_argument('-g','--graphical', action="store_true", help="Open Edge admin GUI page in webbrowser")
-parser.add_argument('-s','--socks',action="store_true",help="SSH to dest and establish SOCKS tunnel proxy")
+#parser.add_argument('-c','--confluence', action="store_true", help="Open Confluence page for property")
+parser.add_argument('-g','--graphical', action="store_true", help="Open Edge's admin GUI in local webbrowser (if you're in WSL it will open through WSL!)")
+parser.add_argument('-s','--socks',action="store_true",help="SSH to destination and establish SOCKS proxy for tunelling GUI")
 
 global SSHBOOL
 global args
