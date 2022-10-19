@@ -7,6 +7,17 @@ import configparser
 global RADIUS_PASSWORD
 global RADIUS_USERNAME
 
+
+# CHANGE YOUR LOGIN CREDS 
+RADIUS_PASSWORD = 'Y*FNDrn8quNQ.Bq-'
+RADIUS_USERNAME = 'agriffin'
+
+
+
+
+
+
+
 parser = argparse.ArgumentParser(description="SSH into an Edge using only the property abbreviation (eg. smh alno)")
 parser.add_argument("PropertyAbbreviation", type=str, help="Property abbreviation (ALNO, WEA, OPA, OMV, OMView, etc.)")
 
@@ -28,11 +39,6 @@ config.read('~/Smartaira-noc-tools/smh/NOC_Radius_Credentials.ini')
 config.sections()
 
 SSHBOOL = True
-##RADIUS_USERNAME = config['RADIUS_CREDENTIALS']['RadiusUsername']
-RADIUS_USERNAME = 'agriffin'
-##RADIUS_PASSWORD = config['RADIUS_CREDENTIALS']['RadiusPassword']
-RADIUS_PASSWORD = 'Y*FNDrn8quNQ.Bq-'
-
 
 def sshProperty(VALID_DOMAIN):
     s = subprocess.run( [ 'ssh', ''+str(RADIUS_USERNAME)+'@'+VALID_DOMAIN+'' ])
